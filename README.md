@@ -55,13 +55,13 @@ b) **Utility-first CSS:** It uses small, single-purpose classes (e.g., `pt-4` fo
 
   - **Avoids Specificity Issues:** Since utility classes have low specificity, developers rarely encounter frustrating CSS specificity battles or need !important declarations.
 
--**Disadvantages:**
+- **Disadvantages:**
 
--**Bloated HTML:** HTML files can become cluttered and less readable with a long list of classes on each element.
+- **Bloated HTML:** HTML files can become cluttered and less readable with a long list of classes on each element.
 
--**Steeper Learning Curve:** New team members may require time to learn the specific utility syntax and workflow of the framework.
+- **Steeper Learning Curve:** New team members may require time to learn the specific utility syntax and workflow of the framework.
 
--**Refactoring Challenges:** Changing a design that uses the same combination of utilities in multiple places can be cumbersome without abstracting them into a component
+- **Refactoring Challenges:** Changing a design that uses the same combination of utilities in multiple places can be cumbersome without abstracting them into a component
 
 The choice between them **depends heavily on project needs, team preferences, and the required level of design flexibility.**
 
@@ -69,11 +69,11 @@ The choice between them **depends heavily on project needs, team preferences, an
 
 a) Install Tailwindcss + DaisyUI:
 
-    - https://tailwindcss.com/docs/installation/using-vite
+- https://tailwindcss.com/docs/installation/using-vite
 
-    - https://daisyui.com/docs/install/
+- https://daisyui.com/docs/install/
 
-    - Note:  is a popular, open-source component library for Tailwind CSS. It acts as a plugin that adds semantic class names (e.g., .btn, .card) to your project, allowing you to build faster without writing long, complex utility class chains. It is CSS-only, meaning it adds no extra JavaScript to your bundle.
+* Note: is a popular, open-source component library for Tailwind CSS. It acts as a plugin that adds semantic class names (e.g., .btn, .card) to your project, allowing you to build faster without writing long, complex utility class chains. It is CSS-only, meaning it adds no extra JavaScript to your bundle.
 
 b) Create a new project and start using tailwindcss + daisyUI.
 
