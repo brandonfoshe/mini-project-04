@@ -104,6 +104,7 @@ function App() {
         "https://jsonplaceholder.typicode.com/users",
       );
       if (!response.ok) throw new Error("failed to fetch");
+
       const myData = await response.json();
       setData(myData);
       setError(null);
@@ -137,6 +138,19 @@ function App() {
   );
 }
 ```
+
+- **Note:** `async-await`: You may have noticed that the `fetchData()` function is declared as an `async` function and the `fetch(...)` and `response.json()` are called with `await`. So, what do they mean and when should we use them?
+  - In React, `async` and `await` are used to handle asynchronous tasks—like fetching data from an API or submitting a form—in a way that looks and behaves like normal, sequential code.
+  - `async`: Marks a function as asynchronous. It ensures the function always returns a `Promise`.
+
+  - `await`: this can only be used inside an `async` function. It pauses the function's execution until a `Promise` resolves, then returns the result. This allows you to write code without messy `.then()` chains.
+
+  - **Key Rules:**
+    - **Error Handling:** Always use `try...catch` blocks around `await` calls to prevent your app from crashing if a network request fails.
+
+    - **Non-Blocking:** While `await` pauses the function it is in, it does not block the main thread. The rest of your React app remains responsive (e.g., animations and other interactions continue).
+
+    - **Server Components (React 18/19+):** In React Server Components, you can use async/await directly at the component level to fetch data before the component even sends HTML to the browser.
 
 ### Resources:
 
