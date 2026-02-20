@@ -1,0 +1,22 @@
+#root {
+    max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.background-col {
+    color: #4b424271;
+}
+
+.box {
+    width: 200 px;
+    height: 50 px;
+    margin: 10px;
+    background-color: var(background-col);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
