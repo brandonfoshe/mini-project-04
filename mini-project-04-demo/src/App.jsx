@@ -33,6 +33,7 @@ const App = () => {
     <>
       <h1>Mini Project 04</h1>
       {isLoading && <h1 className="text-7xl">Loading data ... please wait</h1>}
+      {error && <h1 className="text-3xl text-red-600">Error: {error.message}</h1>}
       {!isLoading && data && (
         <ul className="m-10 p-3">
           {data.map((d, index) => (
