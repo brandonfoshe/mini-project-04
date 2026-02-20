@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./App.css";
 
 const App = () => {
@@ -6,16 +6,16 @@ const App = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
-  async function fetchData() {
+  const fetchData = useCallback(async () => {
     try {
       const response = await fetch(
-        "https://jsonplaceholder.typicode.com/users",
+        "./public/movie.json",
       );
       if (!response.ok) throw new Error("failed to fetch");
       const myData = await response.json();
       setData(myData);
       setError(null);
-      console.log(data);
+      console.log(myData);
     } catch (err) {
       setError(err);
       console.log(err);
@@ -23,11 +23,11 @@ const App = () => {
     } finally {
       setIsLoading(false);
     }
-  }
+  }, []);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return (
     <>
@@ -38,7 +38,7 @@ const App = () => {
         <ul className="m-10 p-3">
           {data.map((d, index) => (
             <li key={index} className="text-3xl">
-              {d.name}
+              {d.title}
             </li>
           ))}
         </ul>
